@@ -1,0 +1,50 @@
+{
+    "ip_locks": {
+        "49.218.141.81": {
+            "failed_attempts": 0,
+            "first_failure": 1775645119,
+            "last_failure": 1775645280,
+            "locked_until": 0,
+            "usernames": [
+                "287"
+            ]
+        },
+        "49.216.17.203": {
+            "failed_attempts": 0,
+            "first_failure": 1775647114,
+            "last_failure": 1775647309,
+            "locked_until": 0,
+            "usernames": [
+                "855"
+            ]
+        },
+        "49.216.41.134": {
+            "failed_attempts": 0,
+            "first_failure": 1775649573,
+            "last_failure": 1775649573,
+            "locked_until": 0,
+            "usernames": [
+                "598"
+            ]
+        },
+        "49.218.140.66": {
+            "failed_attempts": 0,
+            "first_failure": 1775651938,
+            "last_failure": 1775651938,
+            "locked_until": 0,
+            "usernames": [
+                "689"
+            ]
+        },
+        "101.10.162.132": {
+            "failed_attempts": 0,
+            "first_failure": 1775659188,
+            "last_failure": 1775659188,
+            "locked_until": 0,
+            "usernames": [
+                "s"
+            ]
+        }
+    },
+    "last_cleanup": 1775659188
+}

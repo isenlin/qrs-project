@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電腦與手機通用表格固定方案</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft JhengHei', sans-serif;
+            padding: 20px; 
+            background: #f8f9fa; 
+            color: #333;
+        }
+        
+        .universal-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .universal-header {
+            background: linear-gradient(135deg, #4a6fa5 0%, #166088 100%);
+            color: white;
+            padding: 30px;
+        }
+        
+        .universal-header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .universal-header p {
+            opacity: 0.95;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        
+        .device-badges {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* ==================== 通用表格樣式 ==================== */
+        .universal-table-wrapper {
+            position: relative;
+            overflow: auto;
+            max-height: 600px;
+            border: 1px solid #e1e5e9;
+            background: white;
+        }
+        
+        .universal-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1000px;
+            font-size: 15px;
+            table-layout: fixed;
+        }
+        
+        .universal-table th,
+        .universal-table td {
+            border: 1px solid #e1e5e9;
+            padding: 16px 12px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        
+        .universal-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #2d3748;
+            position: relative;
+        }
+        
+        .universal-table td:first-child {
+            background: #f8fafc;
+            font-weight: 600;
+            text-align: left;
+            padding-left: 20px;
+            position: relative;
+            color: #2d3748;
+        }
+        
+        /* 店櫃資訊樣式 */
+        .store-cell {
+            line-height: 1.4;
+        }
+        
+        .store-code {
+            font-weight: 700;
+            font-size: 15px;
+            color: #2d3748;
+        }
+        
+        .store-name {
+            color: #718096;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        
+        /* 斑馬條紋 */
+        .universal-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+        
+        .universal-table tbody tr:nth-child(odd) {
+            background: white;
+        }
+        
+        /* 週末樣式 */
+        .weekend {
+            background: rgba(255, 237, 213, 0.3) !important;
+            color: #d69e2e;
+        }
+        
+        /* 代班標記 */
+        .substitute {
+            font-size: 11px;
+            color: #a0aec0;
+            margin-top: 3px;
+            font-weight: 500;
+        }
+        
+        /* 總計行 */
+        .total-row {
+            background: #e6fffa !important;
+            font-weight: 700;
+            color: #234e52;
+        }
+        
+        /* 金額樣式 */
+        .amount {
+            font-weight: 500;
+            color: #2d3748;
+        }
+        
+        .amount-zero {
+            color: #a0aec0;
+        }
+        
+        /* ==================== 控制面板 ==================== */
+        .universal-controls {
+            padding: 25px 30px;
+            background: #f8fafc;
+            border-top: 1px solid #e1e5e9;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .universal-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .universal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .btn-enable {
+            background: #3182ce;
+            color: white;
+        }
+        
+        .btn-enable:hover {
+            background: #2c5282;
+        }
+        
+        .btn-test {
+            background: #38a169;
+            color: white;
+        }
+        
+        .btn-test:hover {
+            background: #276749;
+        }
+        
+        .btn-reset {
+            background: #718096;
+            color: white;
+        }
+        
+        .btn-reset:hover {
+            background: #4a5568;
+        }
+        
+        .btn-mobile {
+            background: #d69e2e;
+            color: white;
+        }
+        
+        .btn-mobile:hover {
+            background: #b7791f;
+        }
+        
+        .universal-status {
+            padding: 12px 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+            font-size: 15px;
+            font-weight: 500;
+            margin-left: auto;
+            min-width: 200px;
+            text-align: center;
+        }
+        
+        .status-active {
+            color: #38a169;
+            border-color: #38a169;
+            background: #f0fff4;
+        }
+        
+        .status-inactive {
+            color: #718096;
+        }
+        
+        .status-error {
+            color: #e53e3e;
+            border-color: #e53e3e;
+            background: #fff5f5;
+        }
+        
+        /* ==================== 裝置檢測 ==================== */
+        .device-info {
+            padding: 20px 30px;
+            background: #edf2f7;
+            border-top: 1px solid #e1e5e9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .device-detect {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .device-icon {
+            font-size: 24px;
+        }
+        
+        .device-text {
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        .device-specs {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #718096;
+        }
+        
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* ==================== 測試結果 ==================== */
+        .universal-results {
+            padding: 25px 30px;
+            background: #f8fafc;
+            border-top: 1px solid #e1e5e9;
+        }
+        
+        .universal-results h3 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e1e5e9;
+            transition: all 0.3s ease;
+        }
+        
+        .result-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+        
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .result-icon {
+            font-size: 24px;
+        }
+        
+        .result-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 16px;
+        }
+        
+        .result-content {
+            color: #4a5568;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        .result-success {
+            border-color: #38a169;
+            background: #f0fff4;
+        }
+        
+        .result-warning {
+            border-color: #d69e2e;
+            background: #fffaf0;
+        }
+        
+        .result-error {
+            border-color: #e53e3e;
+            background: #fff5f5;
+        }
+        
+        /* ==================== 說明區域 ==================== */
+        .universal-explanation {
+            padding: 30px;
+            background: white;
+            border-top: 1px solid #e1e5e9;
+        }
+        
+        .explanation-title {
+            color: #2d3748;
+            margin-bottom: 25px;
+            font-size: 24px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .feature-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e1e5e9;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #3182ce;
+        }
+        
+        .feature-title {
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .feature-desc {
+            color: #718096;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        .implementation-steps {
+            background: #edf2f7;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        
+        .steps-title {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #cbd5e0;
+        }
+        
+        .step-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .step-number {
+            background: #3182ce;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .step-content h4 {
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .step-content p {
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        
+        /* ==================== 手機專用樣式 ==================== */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .universal-container {
+                border-radius: 8px;
+            }
+            
+            .universal-header {
+                padding: 20px;
+            }
+            
+            .universal-header h1 {
+                font-size: 24px;
+            }
+            
+            .universal-header p {
+                font-size: 16px;
+            }
+            
+            .universal-table-wrapper {
+                max-height: 500px;
+            }
+            
+            .universal-table {
+                min-width: 800px;
+                font-size: 14px;
+            }
+            
+            .universal-table th,
+            .universal-table td {
+                padding: 12px 8px;
+            }
+            
+            .universal-table td:first-child {
+                padding-left: 15px;
+                min-width: 140px;
+            }
+            
+            .store-code {
+                font-size: 14px;
+            }
+            
+            .store-name {
+                font-size: 12px;
+            }
+            
+            .universal-controls {
+                padding: 15px 20px;
+                flex-direction: column;
+            }
+            
+            .universal-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .universal-status {
+                margin-left: 0;
+                width: 100%;
+            }
+            
+            .device-info {
+                padding: 15px 20px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .device-specs {
+                justify-content: space-between;
+            }
+            
+            .universal-results {
+                padding: 20px;
+            }
+            
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .universal-explanation {
+                padding: 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .implementation-steps {
+                padding: 20px;
+            }
+        }
+        
+        /* ==================== 超小螢幕 ==================== */
+        @media (max-width: 480px) {
+            .universal-table {
+                min-width: 700px;
+                font-size: 13px;
+            }
+            
+            .universal-table th,
+            .universal-table td {
+                padding: 10px 6px;
+            }
+            
+            .store-code {
+                font-size: 13px;
+            }
+            
+            .store-name {
+                font-size: 11px;
+            }
+            
+            .device-specs {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* ==================== 動畫效果 ==================== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* ==================== 滾動提示 ==================== */
+        .scroll-hint {
+            text-align: center;
+            padding: 12px;
+            background: #fffaf0;
+            color: #d69e2e;
+            border-bottom: 1px solid #feebc8;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .scroll-hint::before {
+            content: '↔️';
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="universal-container">
+        <div class="universal-header">
+            <h1>💻📱 電腦與手機通用表格固定方案</h1>
+            <p>使用 JavaScript 動態固定 + 響應式設計，確保在所有裝置上都能可靠工作</p>
+            
+            <div class="device-badges">
+                <div class="badge">💻 桌面電腦</div>
+                <div class="badge">📱 手機</div>
+                <div class="badge">🖥️ 平板</div>
+                <div class="badge">🔧 所有瀏覽器</div>
+            </div>
+        </div>
+        
+        <div class="scroll-hint" id="scrollHint">
+            可左右滑動查看完整表格（表頭和左欄會保持固定）
+        </div>
+        
+        <div class="universal-table-wrapper" id="tableWrapper">
+            <table class="universal-table" id="salesTable">
+                <thead>
+                    <tr>
+                        <th style="min-width: 160px;">店櫃</th>
+                        <th class="weekend">3/1<br><small>六</small></th>
+                        <

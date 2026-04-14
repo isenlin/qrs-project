@@ -1,0 +1,712 @@
+[
+    {
+        "code": "277",
+        "name": "復興店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "phone": "02-22881118",
+        "mobile": "0982-688299",
+        "status": "active",
+        "created_at": "2026-04-09"
+    },
+    {
+        "code": "282",
+        "name": "自強店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-28215427",
+        "mobile": "0906-068557"
+    },
+    {
+        "code": "283",
+        "name": "蘆洲店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22888891",
+        "mobile": "0985-335353"
+    },
+    {
+        "code": "286",
+        "name": "文林店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-28325077",
+        "mobile": "0977-278288"
+    },
+    {
+        "code": "287",
+        "name": "北投店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-28915181",
+        "mobile": "0977-467920"
+    },
+    {
+        "code": "288",
+        "name": "林口店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "phone": "02-26032286",
+        "mobile": "0977-180539",
+        "status": "active",
+        "created_at": "2026-04-09"
+    },
+    {
+        "code": "289",
+        "name": "內湖店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-27965553",
+        "mobile": "0977-165899"
+    },
+    {
+        "code": "290",
+        "name": "寧波店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-23435512",
+        "mobile": "0980-582475"
+    },
+    {
+        "code": "291",
+        "name": "淡水店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-26259869",
+        "mobile": "0980-279304"
+    },
+    {
+        "code": "295",
+        "name": "成泰店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22916558",
+        "mobile": "0977-467938"
+    },
+    {
+        "code": "296",
+        "name": "中華店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-28489872",
+        "mobile": "0980-582462"
+    },
+    {
+        "code": "297",
+        "name": "中正店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-82858299",
+        "mobile": "0980-648235"
+    },
+    {
+        "code": "298",
+        "name": "松江店",
+        "sales_person": "S002",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-25812960",
+        "mobile": "0980-231688"
+    },
+    {
+        "code": "380",
+        "name": "民治店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22592282",
+        "mobile": "0982-929388"
+    },
+    {
+        "code": "385",
+        "name": "民享店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29563140",
+        "mobile": "0980-582465"
+    },
+    {
+        "code": "387",
+        "name": "板橋店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-89698886",
+        "mobile": "0982-582458"
+    },
+    {
+        "code": "390",
+        "name": "黃石店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-89698776",
+        "mobile": "0902-096399"
+    },
+    {
+        "code": "399",
+        "name": "新埔店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22543336",
+        "mobile": "0977-488006"
+    },
+    {
+        "code": "553",
+        "name": "環球店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22215029",
+        "mobile": "0985991569"
+    },
+    {
+        "code": "555",
+        "name": "興南店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29401038",
+        "mobile": "0980-582469"
+    },
+    {
+        "code": "558",
+        "name": "新泰店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22766446",
+        "mobile": "0980-582044"
+    },
+    {
+        "code": "566",
+        "name": "泰和店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22468700",
+        "mobile": "0980-582470"
+    },
+    {
+        "code": "567",
+        "name": "國慶店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29611977",
+        "mobile": "0980-582468"
+    },
+    {
+        "code": "568",
+        "name": "中央店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22700878",
+        "mobile": "0977-477529"
+    },
+    {
+        "code": "569",
+        "name": "三民店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29125781",
+        "mobile": "0977-180538"
+    },
+    {
+        "code": "577",
+        "name": "幸福店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29985925",
+        "mobile": "0980-582624"
+    },
+    {
+        "code": "578",
+        "name": "學府店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-82628304",
+        "mobile": "0980-582466"
+    },
+    {
+        "code": "588",
+        "name": "新莊店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-22070669",
+        "mobile": "0980-582471"
+    },
+    {
+        "code": "598",
+        "name": "員山店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-32346502",
+        "mobile": "0977-180540"
+    },
+    {
+        "code": "599",
+        "name": "土城店",
+        "sales_person": "S005",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-82623256",
+        "mobile": "0980-582472"
+    },
+    {
+        "code": "656",
+        "name": "新生店",
+        "sales_person": "S006",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-4250830",
+        "mobile": "0980-582834"
+    },
+    {
+        "code": "666",
+        "name": "中壢店",
+        "sales_person": "S006",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-4272377",
+        "mobile": "0980-582473"
+    },
+    {
+        "code": "668",
+        "name": "平鎮店",
+        "sales_person": "S006",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-4030138",
+        "mobile": "0977-477519"
+    },
+    {
+        "code": "669",
+        "name": "太平店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-22771187",
+        "mobile": "0977-467963"
+    },
+    {
+        "code": "675",
+        "name": "豐原店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-25294766",
+        "mobile": "0982-582431"
+    },
+    {
+        "code": "676",
+        "name": "霧峰店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-23332673",
+        "mobile": "0982-582443"
+    },
+    {
+        "code": "679",
+        "name": "自由店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-22230956",
+        "mobile": "0982-582476"
+    },
+    {
+        "code": "680",
+        "name": "大鵬店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-22985177",
+        "mobile": "0980-855788"
+    },
+    {
+        "code": "681",
+        "name": "進化店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-22374730",
+        "mobile": "0906-969258"
+    },
+    {
+        "code": "686",
+        "name": "清水店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-26228713",
+        "mobile": "0980-582084"
+    },
+    {
+        "code": "689",
+        "name": "向上店",
+        "sales_person": "S006",
+        "supervisor": "SP003",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "04-23050513",
+        "mobile": "0980-582452"
+    },
+    {
+        "code": "698",
+        "name": "中北店",
+        "sales_person": "S006",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-4679907",
+        "mobile": "0980-582453"
+    },
+    {
+        "code": "550",
+        "name": "興隆店",
+        "sales_person": "S008",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-82301500",
+        "mobile": "0906-068702"
+    },
+    {
+        "code": "855",
+        "name": "和平店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-27361207",
+        "mobile": "0980-582463"
+    },
+    {
+        "code": "858",
+        "name": "愛二店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-24225876",
+        "mobile": "0980-582481"
+    },
+    {
+        "code": "859",
+        "name": "仁三店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-24259760",
+        "mobile": "0985-955609"
+    },
+    {
+        "code": "861",
+        "name": "七堵店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-24551115",
+        "mobile": "0977-277789"
+    },
+    {
+        "code": "866",
+        "name": "民生店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-25412937",
+        "mobile": "0980-582477"
+    },
+    {
+        "code": "867",
+        "name": "公正店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "039-569506",
+        "mobile": "0977-180537"
+    },
+    {
+        "code": "868",
+        "name": "羅東店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "039-566893",
+        "mobile": "0977-467901"
+    },
+    {
+        "code": "869",
+        "name": "光復店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "039-320817",
+        "mobile": "0977-467960"
+    },
+    {
+        "code": "877",
+        "name": "同德店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-27824996",
+        "mobile": "0980-582478"
+    },
+    {
+        "code": "878",
+        "name": "中崙店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-25775567",
+        "mobile": "0980-582456"
+    },
+    {
+        "code": "886",
+        "name": "永春店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-23461665",
+        "mobile": "0980-582482"
+    },
+    {
+        "code": "888",
+        "name": "吳興店",
+        "sales_person": "S008",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-27320546",
+        "mobile": "0980-582479"
+    },
+    {
+        "code": "396",
+        "name": "三峽店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-26714529",
+        "mobile": "0980-582460"
+    },
+    {
+        "code": "397",
+        "name": "龍華店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-4806172",
+        "mobile": "0980-237304"
+    },
+    {
+        "code": "955",
+        "name": "博愛店",
+        "sales_person": "S009",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-26817121",
+        "mobile": "0980-582459"
+    },
+    {
+        "code": "966",
+        "name": "龜山店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3502899",
+        "mobile": "0906-068507"
+    },
+    {
+        "code": "967",
+        "name": "寶山店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3559931",
+        "mobile": "0977-180536"
+    },
+    {
+        "code": "968",
+        "name": "重新店",
+        "sales_person": "S009",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29744720",
+        "mobile": "0982-582847"
+    },
+    {
+        "code": "969",
+        "name": "長壽店",
+        "sales_person": "S009",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29809749",
+        "mobile": "0980-582476"
+    },
+    {
+        "code": "981",
+        "name": "桃鶯店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3762639",
+        "mobile": "0906-595258"
+    },
+    {
+        "code": "984",
+        "name": "南門店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3337335",
+        "mobile": "0977-467961"
+    },
+    {
+        "code": "985",
+        "name": "大園店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3865519",
+        "mobile": "0982-582314"
+    },
+    {
+        "code": "986",
+        "name": "力行店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3472529",
+        "mobile": "0977-467962"
+    },
+    {
+        "code": "987",
+        "name": "八德店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3616887",
+        "mobile": "0977-467921"
+    },
+    {
+        "code": "988",
+        "name": "民族店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3340161",
+        "mobile": "0977-467970"
+    },
+    {
+        "code": "989",
+        "name": "桃園店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-3384900",
+        "mobile": "0980-582497"
+    },
+    {
+        "code": "996",
+        "name": "龍門店",
+        "sales_person": "S009",
+        "supervisor": "SP002",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "02-29759768",
+        "mobile": "0980-582480"
+    },
+    {
+        "code": "997",
+        "name": "北龍店",
+        "sales_person": "S009",
+        "supervisor": "SP001",
+        "status": "active",
+        "created_at": "2026-03-22",
+        "phone": "03-4990538",
+        "mobile": "096-8510590"
+    }
+]

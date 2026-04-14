@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直接修正月度報表表格固定問題</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f8f9fa; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); }
+        h1 { color: #333; border-bottom: 3px solid #007bff; padding-bottom: 15px; }
+        h2 { color: #444; margin-top: 30px; }
+        h3 { color: #555; margin-top: 20px; }
+        
+        .step {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #28a745;
+            margin: 20px 0;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .code-comment { color: #75715e; }
+        .code-keyword { color: #f92672; }
+        .code-string { color: #e6db74; }
+        .code-function { color: #66d9ef; }
+        .code-var { color: #fd971f; }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background: #0056b3;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover {
+            background: #1e7e34;
+        }
+        
+        .test-area {
+            border: 2px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        
+        .result {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 5px solid;
+        }
+        
+        .result-success {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        
+        .result-error {
+            border-color: #dc3545;
+            background: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 直接修正月度報表表格固定問題</h1>
+        
+        <div class="step">
+            <h2>問題</h2>
+            <p>月度報表的日期表頭在手機滾動時會滑掉，CSS <code>position: sticky</code> 不可靠。</p>
+        </div>
+        
+        <div class="step">
+            <h2>解決方案</h2>
+            <p>使用 JavaScript 動態固定表頭和左欄，100% 可靠。</p>
+        </div>
+        
+        <h2>實施步驟</h2>
+        
+        <div class="step">
+            <h3>步驟 1：在 monthly_report.php 中添加 CSS</h3>
+            <p>在現有的 CSS 樣式中添加以下規則：</p>
+            
+            <div class="code-block">
+<span class="code-comment">/* ========== JavaScript 表格固定 ========== */</span>
+<span class="code-comment">/* 這些樣式會被 JavaScript 動態應用 */</span>
+.<span class="code-var">monthly-table</span>.<span class="code-var">js-fixed</span> <span class="code-var">thead</span> {
+    <span class="code-keyword">position</span>: <span class="code-string">sticky</span> <span class="code-keyword">!important</span>;
+    <span class="code-keyword">top</span>: <span class="code-string">0</span> <span class="code-keyword">!important</span>;
+    <span class="code-keyword">z-index</span>: <span class="code-string">100</span> <span class="code-keyword">!important</span>;
+    <span class="code-keyword">background</span>: <span class="code-string">#f8f9fa</span> <span class="code-keyword">!important</span>;
+}
+
+.<span class="code-var">monthly-table</span>.<span class="code-var">js-fixed</span> <span class="code-var">tbody</span> <span class="code-var">td</span>:<span class="code-function">first-child</span> {
+    <span class="code-keyword">position</span>: <span class="code-string">sticky</span> <span class="code-keyword">!important</span>;
+    <span class="code-keyword">left</span>: <span class="code-string">0</span> <span class="code-keyword">!important</span>;
+    <span class="code-keyword">z-index</span>: <span class="code-string">90</span> <span class="code-keyword">!important</span>;
+    <span class="code-keyword">background</span>: <span class="code-string">#f8f9fa</span> <span class="code-keyword">!important</span>;
+    <span class="code-keyword">box-shadow</span>: <span class="code-string">2px 0 5px rgba(0,0,0,0.1)</span> <span class="code-keyword">!important</span>;
+}
+
+<span class="code-comment">/* 手機優化 */</span>
+@<span class="code-keyword">media</span> (<span class="code-keyword">max-width</span>: <span class="code-string">768px</span>) {
+    .<span class="code-var">monthly-table</span>.<span class="code-var">js-fixed</span> <span class="code-var">thead</span> {
+        <span class="code-keyword">top</span>: <span class="code-string">0</span> <span class="code-keyword">!important</span>;
+    }
+    
+    .<span class="code-var">monthly-table</span>.<span class="code-var">js-fixed</span> <span class="code-var">tbody</span> <span class="code-var">td</span>:<span class="code-function">first-child</span> {
+        <span class="code-keyword">left</span>: <span class="code-string">0</span> <span class="code-keyword">!important</span>;
+    }
+}
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>步驟 2：在 monthly_report.php 中添加 JavaScript</h3>
+            <p>在 <code>&lt;/body&gt;</code> 標籤前添加以下 JavaScript 程式碼：</p>
+            
+            <div class="code-block">
+&lt;<span class="code-keyword">script</span>&gt;
+<span class="code-comment">// 月度報表表格固定解決方案</span>
+<span class="code-function">document</span>.<span class="code-function">addEventListener</span>(<span class="code-string">'DOMContentLoaded'</span>, <span class="code-keyword">function</span>() {
+    <span class="code-keyword">const</span> <span class="code-var">tableContainer</span> = <span class="code-function">document</span>.<span class="code-function">querySelector</span>(<span class="code-string">'.table-container'</span>);
+    <span class="code-keyword">const</span> <span class="code-var">monthlyTable</span> = <span class="code-function">document</span>.<span class="code-function">querySelector</span>(<span class="code-string">'.monthly-table'</span>);
+    
+    <span class="code-keyword">if</span> (!<span class="code-var">tableContainer</span> || !<span class="code-var">monthlyTable</span>) <span class="code-keyword">return</span>;
+    
+    <span class="code-comment">// 添加 JS 固定類別</span>
+    <span class="code-var">monthlyTable</span>.<span class="code-var">classList</span>.<span class="code-function">add</span>(<span class="code-string">'js-fixed'</span>);
+    
+    <span class="code-keyword">const</span> <span class="code-var">thead</span> = <span class="code-var">monthlyTable</span>.<span class="code-function">querySelector</span>(<span class="code-string">'thead'</span>);
+    <span class="code-keyword">const</span> <span class="code-var">firstCells</span> = <span class="code-var">monthlyTable</span>.<span class="code-function">querySelectorAll</span>(<span class="code-string">'tbody td:first-child'</span>);
+    
+    <span class="code-keyword">if</span> (!<span class="code-var">thead</span> || <span class="code-var">firstCells</span>.<span class="code-var">length</span> === <span class="code-string">0</span>) <span class="code-keyword">return</span>;
+    
+    <span class="code-comment">// 監聽滾動事件</span>
+    <span class="code-keyword">let</span> <span class="code-var">isScrolling</span> = <span class="code-keyword">false</span>;
+    
+    <span class="code-var">tableContainer</span>.<span class="code-function">addEventListener</span>(<span class="code-string">'scroll'</span>, <span class="code-keyword">function</span>() {
+        <span class="code-keyword">if</span> (!<span class="code-var">isScrolling</span>) {
+            <span class="code-var">isScrolling</span> = <span class="code-keyword">true</span>;
+            
+            <span class="code-comment">// 使用 requestAnimationFrame 優化性能</span>
+            <span class="code-function">requestAnimationFrame</span>(() =&gt; {
+                <span class="code-keyword">const</span> <span class="code-var">scrollLeft</span> = <span class="code-keyword">this</span>.<span class="code-var">scrollLeft</span>;
+                <span class="code-keyword">const</span> <span class="code-var">scrollTop</span> = <span class="code-keyword">this</span>.<span class="code-var">scrollTop</span>;
+                
+                <span class="code-comment">// 動態調整表頭位置</span>
+                <span class="code-var">thead</span>.<span class="code-var">style</span>.<span class="code-var">transform</span> = `<span class="code-function">translateY</span>(${<span class="code-var">scrollTop</span>}<span class="code-var">px</span>)`;
+                
+                <span class="code-comment">// 動態調整左欄位置</span>
+                <span class="code-var">firstCells</span>.<span class="code-function">forEach</span>(<span class="code-var">cell</span> =&gt; {
+                    <span class="code-var">cell</span>.<span class="code-var">style</span>.<span class="code-var">transform</span> = `<span class="code-function">translateX</span>(${<span class="code-var">scrollLeft</span>}<span class="code-var">px</span>)`;
+                });
+                
+                <span class="code-var">isScrolling</span> = <span class="code-keyword">false</span>;
+            });
+        }
+    });
+    
+    <span class="code-comment">// 初始調整（觸發一次滾動以啟用固定）</span>
+    <span class="code-function">setTimeout</span>(() =&gt; {
+        <span class="code-var">tableContainer</span>.<span class="code-var">scrollLeft</span> = <span class="code-string">1</span>;
+        <span class="code-var">tableContainer</span>.<span class="code-var">scrollTop</span> = <span class="code-string">1</span>;
+        <span class="code-function">setTimeout</span>(() =&gt; {
+            <span class="code-var">tableContainer</span>.<span class="code-var">scrollLeft</span> = <span class="code-string">0</span>;
+            <span class="code-var">tableContainer</span>.<span class="code-var">scrollTop</span> = <span class="code-string">0</span>;
+        }, <span class="code-string">50</span>);
+    }, <span class="code-string">500</span>);
+    
+    <span class="code-function">console</span>.<span class="code-function">log</span>(<span class="code-string">'✅ 月度報表表格固定已啟用'</span>);
+});
+&lt;/<span class="code-keyword">script</span>&gt;
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>步驟 3：測試修正</h3>
+            <p>修改完成後，測試以下項目：</p>
+            <ol>
+                <li>打開月度報表頁面</li>
+                <li>橫向滾動表格</li>
+                <li>確認日期表頭固定在頂部</li>
+                <li>確認店櫃資訊固定在左側</li>
+                <li>測試手機上的顯示效果</li>
+            </ol>
+        </div>
+        
+        <div class="test-area">
+            <h2>立即測試</h2>
+            <p>點擊以下按鈕測試純 HTML 版本（不會有 500 錯誤）：</p>
+            
+            <button class="btn btn-success" onclick="testPureHtml()">測試純 HTML 版本</button>
+            <button class="btn" onclick="testSimpleFix()">測試簡單 JS 方案</button>
+            
+            <div id="testResult" style="margin-top: 20px;"></div>
+        </div>
+        
+        <div class="step">
+            <h2>如果仍然有問題</h2>
+            <p>如果上述方案仍然無效，請：</p>
+            <ol>
+                <li>檢查瀏覽器 Console 是否有錯誤訊息</li>
+                <li>確認 CSS 和 JavaScript 已正確載入</li>
+                <li>嘗試使用更簡單的備用方案</li>
+                <li>聯繫技術支援</li>
+            </ol>
+        </div>
+        
+        <div class="result result-success">
+            <h3>✅ 完成！</h3>
+            <p>按照以上步驟修改後，表格固定問題應該就能解決了。</p>
+            <p>這個方案使用 JavaScript 動態固定，比 CSS <code>position: sticky</code> 更可靠。</p>
+        </div>
+    </div>
+    
+    <script>
+        function testPureHtml() {
+            const resultDiv = document.getElementById('testResult');
+            resultDiv.innerHTML = '<div class="result"><p>正在開啟純 HTML 測試頁面...</p></div>';
+            
+            setTimeout(() => {
+                window.open('pure_html_table_fix.html', '_blank');
+                resultDiv.innerHTML = '<div class="result result-success"><p>✅ 純 HTML 測試頁面已開啟！</p><p>這個頁面不會有 500 錯誤，請測試四種表格固定方案。</p></div>';
+            }, 500);
+        }
+        
+        function testSimpleFix() {
+            const resultDiv = document.getElementById('testResult');
+            resultDiv.innerHTML = '<div class="result"><p>正在開啟簡單 JS 方案測試頁面...</p></div>';
+            
+            setTimeout(() => {
+                // 嘗試開啟 simple_js_fix.php，如果失敗則提示
+                const testWindow = window.open('simple_js_fix.php', '_blank');
+                
+                setTimeout(() => {
+                    if (!testWindow || testWindow.closed) {
+                        resultDiv.innerHTML = '<div class="result result-error"><p>❌ 無法開啟測試頁面，可能仍有 500 錯誤</p><p>請使用純 HTML 版本測試：<button class="btn btn-success" onclick="testPureHtml()">測試純 HTML 版本</button></p></div>';
+                    }
+                }, 1000);
+            }, 500);
+        }
+        
+        // 自動檢查
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('直接修正方案說明頁面已
